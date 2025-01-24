@@ -1,0 +1,970 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<StackPane stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.realestatemanagementsystem.homepageController">
+   <children>
+      <AnchorPane stylesheets="@style.css">
+         <children>
+            <ScrollPane layoutY="55.0">
+               <content>
+                  <AnchorPane prefHeight="639.0" prefWidth="1000.0" style="-fx-background-color: #ffeafe;">
+                     <children>
+                        <ImageView fitHeight="389.0" fitWidth="1000.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../../../images/homepage%20background.jpeg" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="350.0" layoutY="50.0" text="Search properties for sale" textFill="#98009e">
+                           <font>
+                              <Font name="Bodoni MT" size="24.0" />
+                           </font>
+                        </Label>
+                        <Pane layoutX="350.0" layoutY="100.0" prefHeight="200.0" prefWidth="250.0">
+                           <children>
+                              <Button fx:id="searchInHomepage" contentDisplay="RIGHT" layoutX="160.0" mnemonicParsing="false" onAction="#onSearchClicked" prefHeight="40.0" prefWidth="90.0" style="-fx-background-radius: 30px; -fx-background-color: #571d4f;" textFill="#ffeefe">
+                                 <graphic>
+                                    <ImageView fitHeight="30.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../images/search%20icon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <padding>
+                                    <Insets left="35.0" />
+                                 </padding>
+                              </Button>
+                              <TextField fx:id="searchKeywordInHomepage" prefHeight="40.0" prefWidth="200.0" promptText="Search property" style="-fx-background-color: white; -fx-background-radius: 30px;">
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </TextField>
+                           </children>
+                        </Pane>
+                        <Button fx:id="menuButton" mnemonicParsing="false" onAction="#onMenuButtonClicked" prefHeight="41.0" prefWidth="88.0" styleClass="menuButton" stylesheets="@style.css" text="Menu" textFill="#571d4f">
+                           <font>
+                              <Font name="Franklin Gothic Demi" size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../images/menu%20icon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <FlowPane fx:id="showPropertiesFlowPane" alignment="CENTER" columnHalignment="CENTER" hgap="10.0" layoutY="439.0" prefHeight="400.0" prefWidth="1000.0" vgap="10.0">
+                           <children>
+                              <Label fx:id="noPropertyFoundLabel" text="No properties found!">
+                                 <font>
+                                    <Font name="Cambria Bold" size="36.0" />
+                                 </font>
+                                 <textFill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.4588235318660736" green="0.07450980693101883" blue="0.4745098054409027" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.7105262875556946" green="0.47039473056793213" blue="0.7105262875556946" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </textFill>
+                              </Label>
+                           </children></FlowPane>
+                        <HBox fx:id="pageNumberAndChangingHBox" alignment="CENTER" layoutX="423.0" layoutY="868.0" prefHeight="23.0" prefWidth="179.0" spacing="5.0">
+                           <children>
+                              <Button fx:id="previousPageButton" mnemonicParsing="false" onAction="#onPreviousPageButtonClicked" prefHeight="32.0" prefWidth="23.0" style="-fx-background-color: transparent;">
+                                 <graphic>
+                                    <ImageView fitHeight="24.0" fitWidth="24.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../images/next%20icon%202.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Label fx:id="currentPageNumber" text="1 / 100">
+                                 <font>
+                                    <Font name="Book Antiqua Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="nextPageButton" layoutX="57.0" layoutY="10.0" mnemonicParsing="false" onAction="#onNextPageButtonClicked" prefHeight="32.0" prefWidth="23.0" style="-fx-background-color: transparent;">
+                                 <graphic>
+                                    <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../images/next%20icon%202.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <HBox fx:id="propertyFoundLabelHBox" alignment="CENTER" layoutX="125.0" layoutY="393.0" prefHeight="35.0" prefWidth="764.0" spacing="12.0" visible="false">
+                           <children>
+                              <Label text="Properties found for:" textFill="#751379">
+                                 <font>
+                                    <Font name="Cambria Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="searchKeyLabel" prefHeight="35.0" prefWidth="123.0" text="Search Key" textFill="#751379">
+                                 <font>
+                                    <Font name="Cambria Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" />
+                     </padding>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+            <HBox prefHeight="52.0" prefWidth="1000.0" translateZ="2.0">
+               <children>
+                  <Pane prefHeight="52.0" prefWidth="185.0" style="-fx-background-color: white;">
+                     <children>
+                        <Label layoutX="35.0" prefHeight="52.0" prefWidth="153.0" text="Your Property" textFill="#5c1259">
+                           <font>
+                              <Font name="Arial Black" size="18.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="10.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/your%20property%20logo.png" />
+                           </image>
+                        </ImageView>
+                        <Separator layoutX="180.0" layoutY="9.0" maxHeight="-Infinity" orientation="VERTICAL" prefHeight="35.0" prefWidth="0.0" />
+                     </children>
+                  </Pane>
+                  <HBox alignment="CENTER" prefHeight="52.0" prefWidth="600.0" spacing="20.0" style="-fx-background-color: white;" stylesheets="@style.css" />
+                  <Pane prefHeight="52.0" prefWidth="215.0" style="-fx-background-color: white;">
+                     <children>
+                        <Button fx:id="joinButton" layoutX="59.0" layoutY="9.0" mnemonicParsing="false" onAction="#onJoinClicked" prefHeight="34.0" prefWidth="124.0" style="-fx-background-color: #571d4f; -fx-background-radius: 10px;" text="Join/Register" textFill="#ffeafe">
+                           <font>
+                              <Font name="Franklin Gothic Demi" size="14.0" />
+                           </font>
+                        </Button>
+                        <HBox fx:id="userAccountContainer" alignment="CENTER" layoutX="18.0" layoutY="1.0" prefHeight="50.0" prefWidth="180.0" spacing="5.0" visible="false">
+                           <children>
+                              <Label fx:id="userAccountContainerLabel" onMouseClicked="#userAccountBoxClicked" text="Name" textFill="#9c3fa1">
+                                 <font>
+                                    <Font name="Bodoni MT Bold" size="16.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Label>
+                              <ImageView fx:id="userAccountProfilePicture" fitHeight="20.0" fitWidth="20.0" onMouseClicked="#userAccountBoxClicked" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../images/user.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                     </children>
+                  </Pane>
+               </children>
+            </HBox>
+            <Separator layoutY="52.0" prefWidth="1000.0" />
+            <AnchorPane fx:id="sideMenu" layoutY="53.0" prefHeight="638.0" prefWidth="183.0" translateX="-183.0">
+               <children>
+                  <Pane fx:id="categories" prefHeight="272.0" prefWidth="183.0" style="-fx-background-color: white;">
+                     <children>
+                        <Label layoutX="14.0" layoutY="6.0" text="Categories" textFill="#8714a4">
+                           <font>
+                              <Font name="Bookman Old Style Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Separator layoutY="27.0" prefWidth="183.0" />
+                        <ToggleButton fx:id="apartmentCategoryInHomepage" layoutY="30.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="185.0" style="-fx-background-color: transparent;" styleClass="category-toggle-button" text="Apartment" textFill="#e16fe1" />
+                        <ImageView fx:id="closeMenu" fitHeight="20.0" fitWidth="20.0" layoutX="149.0" layoutY="4.0" onMouseClicked="#closeSideMenu" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/cross.png" />
+                           </image>
+                        </ImageView>
+                        <ToggleButton fx:id="housesCategoryInHomepage" layoutY="69.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="185.0" style="-fx-background-color: transparent;" styleClass="category-toggle-button" text="House" textFill="#e16fe1" />
+                        <ToggleButton fx:id="landsCategoryInHomepage" layoutY="106.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="185.0" style="-fx-background-color: transparent;" styleClass="category-toggle-button" text="Land" textFill="#e16fe1" />
+                        <ToggleButton fx:id="residentialUnitsCategoryInHomepage" layoutY="143.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="185.0" style="-fx-background-color: transparent;" styleClass="category-toggle-button" text="Residential Unit" textFill="#e16fe1" />
+                        <ToggleButton fx:id="commericalUnitsCategoryInHomepage" layoutY="180.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="185.0" style="-fx-background-color: transparent;" styleClass="category-toggle-button" text="Commercial Unit" textFill="#e16fe1" />
+                        <ToggleButton fx:id="businessPlacesCategoryInHomepage" layoutY="211.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="185.0" style="-fx-background-color: transparent;" styleClass="category-toggle-button" text="Business Place" textFill="#e16fe1" />
+                     </children>
+                  </Pane>
+                  <ScrollPane hbarPolicy="NEVER" layoutY="270.0" pannable="true" prefHeight="369.0" prefWidth="183.0" vbarPolicy="NEVER">
+                     <content>
+                        <VBox prefHeight="367.0" prefWidth="185.0" style="-fx-background-color: white;">
+                           <children>
+                              <Pane prefHeight="117.0" prefWidth="183.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="9.0" text="Filter" textFill="#8714a4">
+                                       <font>
+                                          <Font name="Bookman Old Style Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Separator layoutY="30.0" prefHeight="3.0" prefWidth="185.0" />
+                                    <CheckBox fx:id="salePropertyFilter" layoutX="32.0" layoutY="65.0" mnemonicParsing="false" text="Sale" textFill="#9e128b" />
+                                    <Label layoutX="13.0" layoutY="41.0" text="Properties for" textFill="#b52db5">
+                                       <font>
+                                          <Font name="Bodoni MT" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <CheckBox fx:id="rentPropertyFilter" layoutX="32.0" layoutY="89.0" mnemonicParsing="false" text="Rent" textFill="#9e128b" />
+                                    <Button layoutX="121.0" layoutY="3.0" mnemonicParsing="false" onAction="#onApplyFilterClicked" style="-fx-background-color: #8a0d79;" text="Apply" textFill="#ffe6fc">
+                                       <font>
+                                          <Font name="Constantia Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="109.0" prefWidth="185.0">
+                                 <children>
+                                    <Label layoutX="13.0" layoutY="8.0" text="Minimum Price" textFill="#b52db5">
+                                       <font>
+                                          <Font name="Bodoni MT" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="minPricePropertyFilter" layoutX="13.0" layoutY="27.0" />
+                                    <Label layoutX="13.0" layoutY="56.0" text="Maximum Price" textFill="#b52db5">
+                                       <font>
+                                          <Font name="Bodoni MT" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="maxPricePropertyFilter" layoutX="13.0" layoutY="75.0" />
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="64.0" prefWidth="185.0">
+                                 <children>
+                                    <Label layoutX="13.0" layoutY="6.0" text="Sort By-" textFill="#b52db5">
+                                       <font>
+                                          <Font name="Bodoni MT" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <ChoiceBox fx:id="sortByProperty" layoutX="13.0" layoutY="25.0" prefWidth="150.0" />
+                                 </children>
+                              </Pane>
+                           </children>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </AnchorPane>
+            <ScrollPane fx:id="showPropertyPane" layoutY="53.0" prefHeight="642.0" prefWidth="1002.0" style="-fx-background-color: white;" translateY="642.0" visible="false">
+               <content>
+                  <AnchorPane prefHeight="991.0" prefWidth="1000.0" style="-fx-background-color: #ffeafe;">
+                     <children>
+                        <AnchorPane layoutX="100.0" layoutY="43.0" prefHeight="989.0" prefWidth="800.0">
+                           <children>
+                              <ImageView fx:id="propertyPicturePrevious" fitHeight="194.0" fitWidth="250.0" layoutX="58.0" layoutY="64.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../../../property%20pictures/apartment%201%20picture%202.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="propertyPictureNext" fitHeight="194.0" fitWidth="250.0" layoutX="490.0" layoutY="64.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../../../property%20pictures/apartment%201%20picture%202.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="propertyPictureCurrent" fitHeight="250.0" fitWidth="300.0" layoutX="249.0" layoutY="36.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../../../property%20pictures/apartment%201%20picture%201.jpg" />
+                                 </image>
+                              </ImageView>
+                              <Button fx:id="showNextPropertyPictureButton" layoutX="702.0" layoutY="145.0" mnemonicParsing="false" onAction="#onShowNextPropertyPictureClicked" prefHeight="31.0" prefWidth="32.0" style="-fx-background-radius: 50%; -fx-background-color: #b356b8d6;" textFill="#b356b8d6">
+                                 <graphic>
+                                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../images/next%20icon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="showPreviousPropertyPictureButton" layoutX="64.0" layoutY="145.0" mnemonicParsing="false" onAction="#onShowPreviousPropertyPictureClicked" prefHeight="31.0" prefWidth="32.0" style="-fx-background-radius: 50%; -fx-background-color: #b356b8d6;" textFill="#b356b8d6">
+                                 <graphic>
+                                    <ImageView fitHeight="16.0" fitWidth="16.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../images/next%20icon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Label fx:id="propertyTitleShow" layoutX="23.0" layoutY="377.0" text="Label" textFill="#ae29ac">
+                                 <font>
+                                    <Font name="Berlin Sans FB Demi Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="showPropertyPrice" layoutX="47.0" layoutY="402.0" text="Label" textFill="#8a1f8a">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="16.0" fitWidth="16.0" layoutX="23.0" layoutY="402.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../images/taka%20icon.png" />
+                                 </image>
+                              </ImageView>
+                              <Pane fx:id="propertyAvailableDatePane" layoutX="315.0" layoutY="377.0">
+                                 <children>
+                                    <Label fx:id="propertyAvailableForRentFromDateShow" layoutY="29.0" text="mm/dd/yyyy" textFill="#8a1f8a">
+                                       <font>
+                                          <Font name="Arial Italic" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Available From-" textFill="#ae29ac">
+                                       <font>
+                                          <Font name="Arial Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <ImageView fitHeight="16.0" fitWidth="16.0" layoutX="23.0" layoutY="431.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../images/location%20icon.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="showPropertyLocation" alignment="TOP_LEFT" layoutX="47.0" layoutY="431.0" prefHeight="40.0" prefWidth="457.0" text="Label" textFill="#8a1f8a" wrapText="true">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="23.0" layoutY="471.0" text="Details" textFill="#ad52b2">
+                                 <font>
+                                    <Font name="Garamond Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Separator layoutX="23.0" layoutY="496.0" prefHeight="3.0" prefWidth="760.0" />
+                              <Pane fx:id="apartmentFeaturesShow" layoutX="23.0" layoutY="427.0" prefHeight="143.0" prefWidth="244.0" translateY="80.0" visible="false">
+                                 <children>
+                                    <Label text="Key Apartment Features" textFill="#ad52b2">
+                                       <font>
+                                          <Font name="Garamond Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="27.0" text="Pet Policy :" textFill="#bf3dbd">
+                                       <font>
+                                          <Font name="Garamond" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="petPolicyShow" layoutX="74.0" layoutY="27.0" text="Yes/No" textFill="#7e1282">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="52.0" text="Furniture Policy :" textFill="#bf3dbd">
+                                       <font>
+                                          <Font name="Garamond" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="furniturePolicyShow" layoutX="103.0" layoutY="52.0" text="Furnished/Unfurnished" textFill="#7e1282">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="79.0" text="Terrace availability :" textFill="#bf3dbd">
+                                       <font>
+                                          <Font name="Garamond" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="terracePreferrenceShow" layoutX="118.0" layoutY="79.0" text="Yes/No" textFill="#7e1282">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="106.0" text="Parking :" textFill="#bf3dbd">
+                                       <font>
+                                          <Font name="Garamond" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="parkingAvailabilityShow" layoutX="59.0" layoutY="106.0" text="Covered/Uncovered" textFill="#7e1282">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <Pane fx:id="houseFeaturesShow" layoutX="23.0" layoutY="427.0" prefHeight="140.0" prefWidth="244.0" translateY="80.0" visible="false">
+                                 <children>
+                                    <Label text="House Features" textFill="#ad52b2">
+                                       <font>
+                                          <Font name="Garamond Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="27.0" text="Basement :" textFill="#bf3dbd">
+                                       <font>
+                                          <Font name="Garamond" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="basementPreferrenceShow" layoutX="74.0" layoutY="27.0" text="Finished/Unfinished" textFill="#7e1282">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="54.0" text="Security features :" textFill="#bf3dbd">
+                                       <font>
+                                          <Font name="Garamond" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="securityFeaturesShow" alignment="TOP_LEFT" layoutX="103.0" layoutY="54.0" prefHeight="40.0" prefWidth="133.0" text="Security System/Gated Entry/Cameras" textFill="#7e1282" wrapText="true">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="98.0" text="Garage :" textFill="#bf3dbd">
+                                       <font>
+                                          <Font name="Garamond" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="garageAvailabilityShow" layoutX="59.0" layoutY="98.0" text="Yes/No" textFill="#7e1282">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <Pane fx:id="landFeaturesShow" layoutX="23.0" layoutY="427.0" prefHeight="123.0" prefWidth="244.0" translateY="80.0" visible="false">
+                                 <children>
+                                    <Label text="Land Features" textFill="#ad52b2">
+                                       <font>
+                                          <Font name="Garamond Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="27.0" text="Topography :" textFill="#bf3dbd">
+                                       <font>
+                                          <Font name="Garamond" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="landTopographyShow" layoutX="74.0" layoutY="27.0" text="Flat/Paved/Hilly" textFill="#7e1282">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="54.0" text="Utilites :" textFill="#bf3dbd">
+                                       <font>
+                                          <Font name="Garamond" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="landUtilitiesShow" layoutX="58.0" layoutY="51.0" prefHeight="24.0" prefWidth="133.0" text="Electricity/Water/Sewage" textFill="#7e1282" wrapText="true">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="82.0" text="Road access :" textFill="#bf3dbd">
+                                       <font>
+                                          <Font name="Garamond" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="landRoadAccessShow" layoutX="81.0" layoutY="82.0" text="Paved/Unpaved" textFill="#7e1282">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <Pane fx:id="commercialUnitFeaturesShow" layoutX="23.0" layoutY="427.0" prefHeight="147.0" prefWidth="244.0" translateY="80.0" visible="false">
+                                 <children>
+                                    <Label text="Commercial Unit Features" textFill="#ad52b2">
+                                       <font>
+                                          <Font name="Garamond Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="27.0" text="Purpose :" textFill="#bf3dbd">
+                                       <font>
+                                          <Font name="Garamond" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="commercialUnitPurposesShow" layoutX="58.0" layoutY="27.0" text="Retail/Office/Medical/Restaurant" textFill="#7e1282">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="54.0" text="Floor layout :" textFill="#bf3dbd">
+                                       <font>
+                                          <Font name="Garamond" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="commercialUnitFloorLayoutShow" layoutX="80.0" layoutY="51.0" prefHeight="24.0" prefWidth="155.0" text="Open-plan/Modular/Separate" textFill="#7e1282" wrapText="true">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="82.0" text="Accessibilites :" textFill="#bf3dbd">
+                                       <font>
+                                          <Font name="Garamond" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="commercialUnitAccessibilitiesShow" alignment="TOP_LEFT" layoutX="84.0" layoutY="82.0" prefHeight="40.0" prefWidth="160.0" text="Elevator/Braille Signage/Accessible Washroom" textFill="#7e1282" wrapText="true">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <Pane fx:id="businessPlaceFeaturesShow" layoutX="23.0" layoutY="427.0" prefHeight="166.0" prefWidth="244.0" translateY="80.0" visible="false">
+                                 <children>
+                                    <Label text="Business Place Features" textFill="#ad52b2">
+                                       <font>
+                                          <Font name="Garamond Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="27.0" text="Purpose :" textFill="#bf3dbd">
+                                       <font>
+                                          <Font name="Garamond" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="businessPlacePurposeShow" layoutX="58.0" layoutY="27.0" text="Store/Garage" textFill="#7e1282">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="54.0" text="Ventilation :" textFill="#bf3dbd">
+                                       <font>
+                                          <Font name="Garamond" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="businessPlaceVentilationFaciltiyShow" alignment="TOP_LEFT" layoutX="80.0" layoutY="54.0" prefHeight="40.0" prefWidth="155.0" text="Standard/High Powered Fans/Air Filtration System" textFill="#7e1282" wrapText="true">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="99.0" text="Power supply :" textFill="#bf3dbd">
+                                       <font>
+                                          <Font name="Garamond" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="businessPlacePowerSupplyShow" alignment="TOP_LEFT" layoutX="84.0" layoutY="99.0" prefHeight="40.0" prefWidth="160.0" text="Standard/High Voltage/Backup Generator" textFill="#7e1282" wrapText="true">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <Pane fx:id="residentialUnitFeaturesShow" layoutX="23.0" layoutY="427.0" prefHeight="123.0" prefWidth="244.0" translateY="80.0" visible="false">
+                                 <children>
+                                    <Label text="Residential Unit Features" textFill="#ad52b2">
+                                       <font>
+                                          <Font name="Garamond Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="27.0" text="Amenities :" textFill="#bf3dbd">
+                                       <font>
+                                          <Font name="Garamond" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="residentialUnitAmenitiesShow" layoutX="74.0" layoutY="27.0" text="Pool/Gym/Kid's Playground" textFill="#7e1282">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="54.0" text="Storage :" textFill="#bf3dbd">
+                                       <font>
+                                          <Font name="Garamond" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="residentialUnitStorageShow" layoutX="58.0" layoutY="51.0" prefHeight="24.0" prefWidth="133.0" text="Closet/Basement/Built-In" textFill="#7e1282" wrapText="true">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="82.0" text="Noise insulation :" textFill="#bf3dbd">
+                                       <font>
+                                          <Font name="Garamond" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="residentialUnitNoiseInsulationShow" layoutX="103.0" layoutY="82.0" text="Insulated/Exposed" textFill="#7e1282">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <Pane fx:id="apartmentSpecificFeaturesShow" layoutX="23.0" layoutY="600.0" prefHeight="130.0" prefWidth="760.0" translateY="80.0" visible="false">
+                                 <children>
+                                    <Label text="Number of Bedroom:" textFill="#bf3dbd">
+                                       <font>
+                                          <Font name="Garamond" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="apartmentBedroomNumberShow" layoutX="150.0" text="Bedroom" textFill="#7e1282">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="370.0" text="Number of Bathroom:" textFill="#bf3dbd">
+                                       <font>
+                                          <Font name="Garamond" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="apartmentBathroomNumberShow" layoutX="525.0" text="Bathroom" textFill="#7e1282">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="27.0" text="Floor number:" textFill="#bf3dbd">
+                                       <font>
+                                          <Font name="Garamond" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="apartmentFloorNumberShow" layoutX="106.0" layoutY="27.0" text="floor" textFill="#7e1282">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="370.0" layoutY="27.0" text="Total floor in building:" textFill="#bf3dbd">
+                                       <font>
+                                          <Font name="Garamond" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="apartmentTotalFloorNumberShow" layoutX="525.0" layoutY="27.0" text="total floor" textFill="#7e1282">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="58.0" text="Maintenance services:" textFill="#bf3dbd">
+                                       <font>
+                                          <Font name="Garamond" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="apartmentMaintenanceServicesShow" layoutX="143.0" layoutY="58.0" text="services" textFill="#7e1282">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="89.0" text="Balcony:" textFill="#bf3dbd">
+                                       <font>
+                                          <Font name="Garamond" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="apartmentBalconyAvailabilityShow" layoutX="73.0" layoutY="89.0" text="Yes/No" textFill="#7e1282">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <Pane fx:id="houseSpecificFeaturesShow" layoutX="23.0" layoutY="600.0" prefHeight="131.0" prefWidth="760.0" translateY="80.0" visible="false">
+                                 <children>
+                                    <Label text="Number of Bedroom:" textFill="#bf3dbd">
+                                       <font>
+                                          <Font name="Garamond" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="houseBedroomNumberShow" layoutX="151.0" layoutY="2.0" text="Bedroom" textFill="#7e1282">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="411.0" text="Number of Bathroom:" textFill="#bf3dbd">
+                                       <font>
+                                          <Font name="Garamond" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="houseBathroomNumberShow" layoutX="564.0" text="Bathroom" textFill="#7e1282">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="38.0" text="Floor number:" textFill="#bf3dbd">
+                                       <font>
+                                          <Font name="Garamond" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="houseFloorNumberShow" layoutX="110.0" layoutY="38.0" text="floor" textFill="#7e1282">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="411.0" layoutY="38.0" text="Roof type:" textFill="#bf3dbd">
+                                       <font>
+                                          <Font name="Garamond" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="houseRoofTypeShow" layoutX="501.0" layoutY="38.0" text="Flat/Sloped/Material" textFill="#7e1282">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="82.0" text="Garden:" textFill="#bf3dbd">
+                                       <font>
+                                          <Font name="Garamond" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="houseGardenShow" layoutX="72.0" layoutY="84.0" text="Yes/No" textFill="#7e1282">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="411.0" layoutY="82.0" text="Balcony:" textFill="#bf3dbd">
+                                       <font>
+                                          <Font name="Garamond" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="houseBalconyShow" layoutX="482.0" layoutY="84.0" text="Yes/No" textFill="#7e1282">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <Pane fx:id="landSpecificFeaturesShow" layoutX="23.0" layoutY="600.0" prefHeight="168.0" prefWidth="760.0" translateY="80.0" visible="false">
+                                 <children>
+                                    <Label text="Land type:" textFill="#bf3dbd">
+                                       <font>
+                                          <Font name="Garamond" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="landTypeShow" layoutX="90.0" text="Agricultural/Residential/Commercial/Industrial" textFill="#7e1282">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="33.0" text="Plot size:" textFill="#bf3dbd">
+                                       <font>
+                                          <Font name="Garamond" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="landPlotSizeShow" layoutX="80.0" layoutY="33.0" text="Size" textFill="#7e1282">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="66.0" text="Land border:" textFill="#bf3dbd">
+                                       <font>
+                                          <Font name="Garamond" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="landBorderShow" layoutX="100.0" layoutY="66.0" text="Fenced/Unfenced/Boundary Markers" textFill="#7e1282">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="100.0" text="Previous development:" textFill="#bf3dbd">
+                                       <font>
+                                          <Font name="Garamond" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="landPreviousDevelopmentShow" layoutX="156.0" layoutY="100.0" text="Yes/No" textFill="#7e1282">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="-1.0" layoutY="139.0" text="Nearby infrastructure:" textFill="#bf3dbd">
+                                       <font>
+                                          <Font name="Garamond" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="landNearbyInfrastructureShow" layoutX="148.0" layoutY="139.0" text="Roads/Schools/Hospitals" textFill="#7e1282">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <Pane fx:id="residentialUnitSpecificFeaturesShow" layoutX="23.0" layoutY="600.0" prefHeight="166.0" prefWidth="760.0" translateY="80.0" visible="false">
+                                 <children>
+                                    <Label text="Configuration:" textFill="#bf3dbd">
+                                       <font>
+                                          <Font name="Garamond" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="residentialUnitConfigurationShow" layoutX="106.0" text="BHK" textFill="#7e1282">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="37.0" text="Shared facilities:" textFill="#bf3dbd">
+                                       <font>
+                                          <Font name="Garamond" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="residentialUnitSharedFacilitiesShow" layoutX="117.0" layoutY="37.0" text="Laundry/Garbage Disposal/Internet" textFill="#7e1282">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="82.0" text="Orientation:" textFill="#bf3dbd">
+                                       <font>
+                                          <Font name="Garamond" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="residentialUnitOrientationShow" layoutX="94.0" layoutY="82.0" text="X-faced" textFill="#7e1282">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="-1.0" layoutY="128.0" text="Natural light:" textFill="#bf3dbd">
+                                       <font>
+                                          <Font name="Garamond" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="residentialUnitNaturalLightShow" layoutX="97.0" layoutY="128.0" text="Low/Medium/High" textFill="#7e1282">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <Pane fx:id="commercialUnitSpecificFeaturesShow" layoutX="23.0" layoutY="600.0" prefHeight="157.0" prefWidth="760.0" translateY="80.0" visible="false">
+                                 <children>
+                                    <Label text="Facade type:" textFill="#bf3dbd">
+                                       <font>
+                                          <Font name="Garamond" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="commercialUnitFacadeTypeShow" layoutX="96.0" text="Glass/Concrete/Metal" textFill="#7e1282">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="38.0" text="Nearby attractions:" textFill="#bf3dbd">
+                                       <font>
+                                          <Font name="Garamond" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="commercialUnitNearbyAttractionsShow" layoutX="130.0" layoutY="38.0" text="Malls/Schools/Parks/Restaurants" textFill="#7e1282">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="76.0" text="Fire safety:" textFill="#bf3dbd">
+                                       <font>
+                                          <Font name="Garamond" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="commercialUnitFireSafetyShow" layoutX="85.0" layoutY="76.0" text="Fire alarms/Extinguishers/Emergency exit" textFill="#7e1282">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="123.0" text="Air conditioning:" textFill="#bf3dbd">
+                                       <font>
+                                          <Font name="Garamond" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="commercialUnitAirConditioningShow" layoutX="120.0" layoutY="123.0" text="Central/Individual/None" textFill="#7e1282">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <Pane fx:id="businessPlaceSpecificFeaturesShow" layoutX="23.0" layoutY="600.0" prefHeight="158.0" prefWidth="760.0" translateY="80.0" visible="false">
+                                 <children>
+                                    <Label text="Lighting Setup:" textFill="#bf3dbd">
+                                       <font>
+                                          <Font name="Garamond" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="businessPlaceLightingSetupShow" layoutX="111.0" text="Ambient/Task/Accent" textFill="#7e1282">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="38.0" text="Customer Waiting Area:" textFill="#bf3dbd">
+                                       <font>
+                                          <Font name="Garamond" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="businessPlaceWaitingAreaShow" layoutX="155.0" layoutY="38.0" text="Dedicated/Seating/None" textFill="#7e1282">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="76.0" text="Visibility From Road:" textFill="#bf3dbd">
+                                       <font>
+                                          <Font name="Garamond" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="businessPlaceVisibilityFromRoadShow" layoutX="141.0" layoutY="76.0" text="High/Medium/Low" textFill="#7e1282">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="122.0" text="Insurance Details:" textFill="#bf3dbd">
+                                       <font>
+                                          <Font name="Garamond" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="businessPlaceInsuranceDetailsShow" layoutX="117.0" layoutY="122.0" text="Insurance" textFill="#7e1282">
+                                       <font>
+                                          <Font name="System Italic" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <Label layoutX="23.0" layoutY="867.0" prefWidth="760.0" text="Description" textFill="#ad52b2">
+                                 <font>
+                                    <Font name="Garamond Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Separator layoutX="23.0" layoutY="892.0" prefHeight="4.0" prefWidth="760.0" />
+                              <Label fx:id="showPropertyDescription" alignment="TOP_LEFT" layoutX="23.0" layoutY="903.0" prefHeight="93.0" prefWidth="760.0" text="Property Description" textFill="#8a1f8a" wrapText="true">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="buyOrRentPropertyFromHomepage" layoutX="396.0" layoutY="1017.0" mnemonicParsing="false" onAction="#onBuyOrRentPropertyClicked" prefHeight="31.0" prefWidth="51.0" style="-fx-background-color: #a27aa8; -fx-background-radius: 10px;" styleClass="editButton" text="Buy" textFill="#fce9ff">
+                                 <font>
+                                    <Font name="Bell MT Bold" size="14.0" />
+                                 </font>
+                              </Button>
+                              <Button layoutX="767.0" mnemonicParsing="false" onAction="#onCancelShowPropertyClicked" prefHeight="34.0" prefWidth="33.0" style="-fx-background-color: #871c849e; -fx-background-radius: 50%;" textFill="#871c849e">
+                                 <graphic>
+                                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../images/cancel.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets bottom="30.0" />
+                           </padding>
+                        </AnchorPane>
+                        <Label layoutX="417.0" layoutY="14.0" text="Property Details" textFill="#80297e">
+                           <font>
+                              <Font name="Cambria Bold" size="22.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

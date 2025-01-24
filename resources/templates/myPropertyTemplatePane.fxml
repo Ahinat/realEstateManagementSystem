@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="myPropertyTemplatePane" prefHeight="209.0" prefWidth="705.0" style="-fx-background-color: #fde7ff; -fx-background-radius: 20px;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Pane layoutX="1.0" prefHeight="170.0" prefWidth="706.0" style="-fx-background-color: white; -fx-background-radius: 20px; -fx-padding: 20px">
+            <children>
+                <ImageView fx:id="myPropertyDisplayImage" fitHeight="150.0" fitWidth="150.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+                <Label fx:id="titleMyProperty" layoutX="179.0" layoutY="26.0" text="Property Title" textFill="#ae29ac">
+                    <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="16.0" />
+                    </font>
+                </Label>
+                <ImageView fitHeight="16.0" fitWidth="16.0" layoutX="178.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/location%20icon.png" />
+                    </image>
+                </ImageView>
+                <Label fx:id="myPropertyLocation" alignment="TOP_LEFT" layoutX="199.0" layoutY="65.0" prefHeight="52.0" prefWidth="414.0" text="Location" textFill="#8a1f8a" wrapText="true">
+                    <font>
+                        <Font name="Arial" size="14.0" />
+                    </font>
+                </Label>
+                <HBox layoutX="179.0" layoutY="131.0" prefHeight="25.0" prefWidth="311.0" spacing="7.0">
+                    <children>
+                          <Label fx:id="myPropertyType" style="-fx-background-color: #fff7ff; -fx-background-radius: 8px;" text="Type" textFill="#7c1983">
+                              <font>
+                                  <Font name="Constantia" size="13.0" />
+                              </font>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                          </Label>
+                          <Label fx:id="myPropertyOfferType" style="-fx-background-color: #fff7ff; -fx-background-radius: 8px;" text="Offer Type" textFill="#7c1983">
+                              <font>
+                                  <Font name="Constantia" size="13.0" />
+                              </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                          </Label>
+                    </children>
+                </HBox>
+            <HBox alignment="CENTER_RIGHT" layoutX="483.0" layoutY="28.0" prefHeight="16.0" prefWidth="182.0" spacing="5.0">
+               <children>
+                      <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                              <Image url="@../images/taka%20icon.png" />
+                          </image>
+                      </ImageView>
+                      <Label fx:id="myPropertyPrice" alignment="CENTER_RIGHT" text="Price" textFill="#8a1f8a" wrapText="true">
+                          <font>
+                              <Font name="Arial Bold" size="14.0" />
+                          </font>
+                      </Label>
+               </children>
+            </HBox>
+            </children>
+        </Pane>
+      <HBox alignment="TOP_RIGHT" layoutX="469.0" layoutY="177.0">
+         <children>
+              <Button fx:id="editPropertyButton" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Edit" textFill="#771579">
+                  <graphic>
+                      <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                              <Image url="@../images/edit%20icon.png" />
+                          </image>
+                      </ImageView>
+                  </graphic>
+                  <font>
+                      <Font name="Constantia Bold" size="12.0" />
+                  </font>
+              </Button>
+              <Button fx:id="previewPropertyButton" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Preview" textFill="#771579">
+                  <graphic>
+                      <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                              <Image url="@../images/show%20icon.png" />
+                          </image>
+                      </ImageView>
+                  </graphic>
+                  <font>
+                      <Font name="Constantia Bold" size="12.0" />
+                  </font>
+              </Button>
+              <Button fx:id="deletePropertyButton" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Delete" textFill="#771579">
+                  <graphic>
+                      <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                              <Image url="@../images/delete%20icon.png" />
+                          </image>
+                      </ImageView>
+                  </graphic>
+                  <font>
+                      <Font name="Constantia Bold" size="12.0" />
+                  </font>
+              </Button>
+         </children>
+      </HBox>
+    </children>
+   <padding>
+      <Insets right="20.0" />
+   </padding>
+</Pane>

@@ -1,0 +1,78 @@
+.menubar:hover{
+    -fx-border-color: #5c1259;
+    -fx-border-width: 0px 0px 3px 0px;
+}
+
+.menubarLabel{
+    -fx-text-fill: #96168b;
+}
+
+.menubar:hover .menubarLabel{
+    -fx-font-size: 13px;
+}
+
+.primaryOptionLayer{
+    -fx-background-color: #ffccfd;
+}
+
+.secondaryOptionLayer{
+    -fx-background-color: #fbb2ff;
+}
+
+.menuItem:hover{
+    -fx-border-color: #5c1259;
+    -fx-border-width: 0px 0px 0px 3px;
+}
+
+.menuButton{
+    -fx-background-color: transparent;
+    -fx-background-radius: 10px;
+}
+
+.menuButton:hover{
+    -fx-background-color: #ede4ed;
+}
+
+.dashboardMenuItem:hover{
+    -fx-border-color: #5c1259;
+    -fx-border-width: 0px 0px 0px 3px;
+}
+
+.profilePrimaryOptions:hover{
+    -fx-border-color: #5c1259;
+    -fx-border-radius: 15px;
+    -fx-border-width: 2px;
+}
+
+.backButton:hover{
+    -fx-background-color: #cfbbd0;
+}
+
+.editButton:hover{
+    -fx-background-color:  #c7b7c7e5;
+}
+
+.dashboardOption:hover{
+    -fx-background-color: #541F53;
+}
+
+.dashboardOption:hover .dashboardLabel{
+    -fx-text-fill:  #f9e3fa;
+}
+
+.dashboardOption:hover .dashboardIcon{
+    -fx-opacity: 0;
+}
+
+.dashboardOption:hover .dashboardActiveIcon{
+    -fx-opacity: 1;
+}
+
+.dashboardBar{
+    -fx-border-width: 0px 2px 0px 2px;
+}
+
+.category-toggle-button:selected{
+    -fx-background-color: #541F53;
+    -fx-font-weight: bold;
+}

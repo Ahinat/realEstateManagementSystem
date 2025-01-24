@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<Pane prefHeight="474.0" prefWidth="250.0" style="-fx-background-color: #ffeafe; -fx-background-radius: 20px;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fx:id="propertyImage" fitHeight="192.0" fitWidth="235.0" layoutX="8.0" layoutY="14.0" pickOnBounds="true">
+         <image>
+            <Image url="@../property%20pictures/house%201%20picture%201.jpg" />
+         </image>
+      </ImageView>
+      <HBox layoutX="8.0" layoutY="218.0" prefHeight="25.0" prefWidth="235.0" spacing="7.0">
+         <children>
+            <Label fx:id="showPropertyType" style="-fx-background-color: #fff7ff; -fx-background-radius: 8px;" text="Type" textFill="#7c1983">
+               <font>
+                  <Font name="Constantia" size="13.0" />
+               </font>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </Label>
+            <Label fx:id="propertyOfferType" style="-fx-background-color: #fff7ff; -fx-background-radius: 8px;" text="Offer Type" textFill="#7c1983">
+               <font>
+                  <Font name="Constantia" size="13.0" />
+               </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </Label>
+         </children>
+      </HBox>
+      <Label fx:id="titleMyProperty" layoutX="8.0" layoutY="251.0" prefHeight="19.0" prefWidth="231.0" text="Property Title" textFill="#ae29ac" wrapText="true">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="16.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER_LEFT" layoutX="8.0" layoutY="277.0" prefHeight="16.0" prefWidth="233.0" spacing="5.0">
+         <children>
+            <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/taka%20icon.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="myPropertyPrice" prefHeight="16.0" prefWidth="214.0" text="Price" textFill="#8a1f8a" wrapText="true">
+               <font>
+                  <Font name="Arial Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <Label fx:id="myPropertyLocation" alignment="TOP_LEFT" layoutX="28.0" layoutY="302.0" prefHeight="52.0" prefWidth="215.0" text="Location" textFill="#8a1f8a" wrapText="true">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="16.0" fitWidth="16.0" layoutX="8.0" layoutY="302.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/location%20icon.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="viewPropertyButton" layoutX="71.0" layoutY="364.0" mnemonicParsing="false" style="-fx-background-color: #571d4f; -fx-background-radius: 8px;" text="View details" textFill="#ffe6fe">
+         <graphic>
+            <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/view%20icon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="Constantia Bold" size="12.0" />
+         </font>
+      </Button>
+      <Pane fx:id="renterDetails" layoutX="8.0" layoutY="411.0">
+         <children>
+            <Label fx:id="renterName" layoutX="51.0" prefHeight="19.0" prefWidth="183.0" text="Renter Name" textFill="#ae29ac" wrapText="true">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="renterEmail" alignment="TOP_LEFT" layoutX="51.0" layoutY="20.0" prefHeight="38.0" prefWidth="183.0" text="Renter email" textFill="#8a1f8a" wrapText="true">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="renterPicture" fitHeight="44.0" fitWidth="44.0" layoutY="3.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../images/user.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+   <effect>
+      <DropShadow blurType="GAUSSIAN" spread="0.33">
+         <color>
+            <Color red="0.2947368323802948" green="0.01746588759124279" blue="0.2901156544685364" />
+         </color>
+      </DropShadow>
+   </effect>
+</Pane>

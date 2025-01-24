@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="405.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.realestatemanagementsystem.editMyProfileController">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <AnchorPane prefHeight="56.0" prefWidth="600.0" style="-fx-background-color: #541f53;">
+               <children>
+                  <Label layoutX="227.0" layoutY="15.0" text="Edit My Profile" textFill="#fef6ff">
+                     <font>
+                        <Font name="Ebrima Bold" size="21.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutY="56.0" prefHeight="350.0" prefWidth="600.0" style="-fx-background-color: white;">
+               <children>
+                  <Label layoutX="201.0" layoutY="30.0" text="Edit name:" textFill="#96168b" />
+                  <TextField fx:id="newFirstName" layoutX="201.0" layoutY="54.0" prefHeight="25.0" prefWidth="88.0" promptText="First name" />
+                  <TextField fx:id="newLastName" layoutX="300.0" layoutY="54.0" prefHeight="25.0" prefWidth="88.0" promptText="Last name" />
+                  <Label layoutX="201.0" layoutY="93.0" text="Edit birthday:" textFill="#96168b" />
+                  <DatePicker fx:id="newBirthday" editable="false" layoutX="202.0" layoutY="117.0" promptText="mm/dd/yyyy" />
+                  <Label layoutX="201.0" layoutY="153.0" text="Edit gender:" textFill="#96168b" />
+                  <RadioButton fx:id="newMaleSelected" layoutX="202.0" layoutY="178.0" mnemonicParsing="false" onAction="#onNewMaleSelected" text="Male" />
+                  <RadioButton fx:id="newFemaleSelected" layoutX="261.0" layoutY="178.0" mnemonicParsing="false" onAction="#onNewFemaleSelected" text="Female" />
+                  <RadioButton fx:id="newOtherSelected" layoutX="326.0" layoutY="178.0" mnemonicParsing="false" onAction="#onNewOtherSelected" text="Other" />
+                  <Label layoutX="201.0" layoutY="206.0" text="Edit bio:" textFill="#96168b" />
+                  <TextArea fx:id="newBio" layoutX="200.0" layoutY="230.0" prefHeight="63.0" prefWidth="200.0" promptText="About yourself" />
+                  <Button layoutX="275.0" layoutY="307.0" mnemonicParsing="false" onAction="#onEditClicked" style="-fx-background-color: #541f53;" text="Edit" textFill="#fef6ff">
+                     <font>
+                        <Font name="Franklin Gothic Demi" size="16.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="confirmEditLayer" layoutY="56.0" prefHeight="350.0" prefWidth="600.0" style="-fx-background-color: white;" translateX="600.0" visible="false">
+               <children>
+                  <Label layoutX="218.0" layoutY="93.0" text="Confirm action" textFill="#96168b" />
+                  <Button layoutX="258.0" layoutY="187.0" mnemonicParsing="false" onAction="#onConfirmEditClicked" style="-fx-background-color: #541f53;" text="Confirm" textFill="#fef6ff">
+                     <font>
+                        <Font name="Franklin Gothic Demi" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <PasswordField fx:id="passwordForEditAccountDetails" layoutX="218.0" layoutY="127.0" promptText="Enter password" />
+                  <Button fx:id="editBackbutton" alignment="CENTER" layoutX="454.0" layoutY="45.0" mnemonicParsing="false" onAction="#onBackFromConfirmEditClicked" style="-fx-background-color: transparent; -fx-background-radius: 10px;" styleClass="backButton" stylesheets="@style.css" text="Back" textFill="#680e65">
+                     <font>
+                        <Font name="Franklin Gothic Demi" size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/back%20icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
